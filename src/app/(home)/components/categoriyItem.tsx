@@ -9,11 +9,11 @@ import {
   SquareIcon,
 } from "lucide-react";
 
-interface CategoriesItemProps {
+interface CategoryItemProps {
   category: Category;
 }
 
-const CategoriesItem = ({ category }: CategoriesItemProps) => {
+const CategoryItem = ({ category }: CategoryItemProps) => {
   const categoryIcon = {
     keyboards: <KeyboardIcon size={16} />,
     monitors: <MonitorIcon size={16} />,
@@ -26,7 +26,7 @@ const CategoriesItem = ({ category }: CategoriesItemProps) => {
   return (
     <Badge
       variant="outline"
-      className="flex items-center justify-center rounded-lg py-3"
+      className="flex items-center justify-center gap-2 rounded-lg py-3"
     >
       {categoryIcon[category.slug as keyof typeof categoryIcon]}
       <span className="text-xs font-bold">{category.name}</span>
@@ -34,4 +34,4 @@ const CategoriesItem = ({ category }: CategoriesItemProps) => {
   );
 };
 
-export default CategoriesItem;
+export default CategoryItem;
