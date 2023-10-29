@@ -44,7 +44,7 @@ const ProductItem = ({ product }: ProductItemPros) => {
                 {FormatCurrency(product.totalPrice)}
               </p>
 
-              <p className="text-xs line-through opacity-75">
+              <p className="pt-1 text-xs line-through opacity-75">
                 {FormatCurrency(Number(product.basePrice))}
               </p>
             </>
