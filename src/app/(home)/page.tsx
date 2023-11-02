@@ -21,32 +21,30 @@ export default async function Home() {
   });
 
   return (
-    <section>
-      <div className="px-5 pt-5">
-        <Banner
-          src="/img/banner-home-01.png"
-          alt="Até 50% de desconto esse mês!"
-        />
+    <section className="flex flex-col gap-8">
+      <Banner
+        src="/img/banner-home-01.png"
+        alt="Até 50% de desconto esse mês!"
+      />
 
-        <div className="mt-8">
-          <Categories />
-        </div>
-      </div>
-
-      <div className="mt-8">
+      <Categories />
+      <div>
         <ProductList products={deals} title="Ofertas" />
       </div>
 
-      <div className="px-5 pt-5">
-        <Banner
-          src="/img/banner-home-02.png"
-          alt="Até 55% de desconto em mouses!"
-        />
-      </div>
+      <Banner
+        src="/img/banner-home-02.png"
+        alt="Até 55% de desconto em mouses!"
+      />
 
-      <div className="mt-8">
+      <div>
         <ProductList products={keyboards} title="Teclados" />
       </div>
+
+      <Banner
+        src="/img/banner-home-03.png"
+        alt="Até 20% de desconto em fones"
+      />
     </section>
   );
 }

@@ -8,7 +8,7 @@ const Banner = ({ alt, ...props }: ImageProps) => {
       height={0}
       width={0}
       sizes="100vw"
-      className="h-auto w-full"
+      className="h-auto w-full px-5 pt-5"
     />
   );
 };
