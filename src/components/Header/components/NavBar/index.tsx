@@ -52,7 +52,7 @@ const NavBar = () => {
         </div>
       )}
 
-      <div className="mt-2 h-[100%] flex-col gap-2">
+      <div className="relative mt-3 flex h-[100%] flex-col gap-[10px]">
         <Button variant="outline" className="w-full justify-start gap-2">
           <HomeIcon size={16} />
           Início
@@ -72,7 +72,7 @@ const NavBar = () => {
           <Button
             onClick={handleLoginClick}
             variant="outline"
-            className="w-full justify-start gap-2"
+            className="absolute bottom-[30px] left-0 w-full justify-start gap-2 bg-green-600 hover:bg-green-700"
           >
             <LogInIcon size={16} />
             Fazer Login
@@ -81,7 +81,7 @@ const NavBar = () => {
           <Button
             onClick={handleLogoutClick}
             variant="outline"
-            className="w-full justify-start gap-2"
+            className="absolute bottom-[30px] left-0 w-full justify-start gap-2 bg-red-500 hover:bg-red-600"
           >
             <LogOutIcon size={16} />
             Fazer Logout

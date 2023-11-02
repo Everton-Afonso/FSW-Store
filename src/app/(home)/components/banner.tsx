@@ -1,14 +1,9 @@
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 
-interface BannerProps {
-  src: string;
-  alt: string;
-}
-
-const Banner = ({ src, alt }: BannerProps) => {
+const Banner = ({ alt, ...props }: ImageProps) => {
   return (
     <Image
-      src={src}
+      {...props}
       alt={alt}
       height={0}
       width={0}
