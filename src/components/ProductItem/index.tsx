@@ -10,8 +10,8 @@ interface ProductItemPros {
 
 const ProductItem = ({ product }: ProductItemPros) => {
   return (
-    <section className="flex max-w-[156px] flex-col gap-4">
-      <div className="relative flex h-[170px] w-[156px] items-center justify-center rounded-lg bg-accent">
+    <section className="flex max-w-[170px] flex-col gap-4">
+      <div className="relative flex h-[170px] w-[170px] items-center justify-center rounded-lg bg-accent">
         {product.discountPercentage > 0 && (
           <Badge className="absolute left-3 top-3 px-2 py-[2px]">
             <ArrowDownIcon size={14} />
