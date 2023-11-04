@@ -9,10 +9,11 @@ import {
   PercentIcon,
 } from "lucide-react";
 
-import { SheetHeader } from "../../../ui/sheet";
+import { SheetClose, SheetHeader } from "../../../ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "../../../ui/avatar";
 import { Separator } from "@radix-ui/react-separator";
 import { Button } from "../../../ui/button";
+import Link from "next/link";
 
 const NavBar = () => {
   const { status, data } = useSession();
@@ -53,20 +54,32 @@ const NavBar = () => {
       )}
 
       <div className="relative mt-3 flex h-[100%] flex-col gap-[10px]">
-        <Button variant="outline" className="w-full justify-start gap-2">
-          <HomeIcon size={16} />
-          Início
-        </Button>
+        <SheetClose asChild>
+          <Link href="/">
+            <Button variant="outline" className="w-full justify-start gap-2">
+              <HomeIcon size={16} />
+              Início
+            </Button>
+          </Link>
+        </SheetClose>
 
-        <Button variant="outline" className="w-full justify-start gap-2">
-          <PercentIcon size={16} />
-          Ofertas
-        </Button>
+        <SheetClose asChild>
+          <Link href="/Deals">
+            <Button variant="outline" className="w-full justify-start gap-2">
+              <PercentIcon size={16} />
+              Ofertas
+            </Button>
+          </Link>
+        </SheetClose>
 
-        <Button variant="outline" className="w-full justify-start gap-2">
-          <ListOrderedIcon size={16} />
-          Catálogo
-        </Button>
+        <SheetClose asChild>
+          <Link href="/Catalog">
+            <Button variant="outline" className="w-full justify-start gap-2">
+              <ListOrderedIcon size={16} />
+              Catálogo
+            </Button>
+          </Link>
+        </SheetClose>
 
         {status === "unauthenticated" ? (
           <Button
@@ -81,7 +94,7 @@ const NavBar = () => {
           <Button
             onClick={handleLogoutClick}
             variant="outline"
-            className="absolute bottom-[30px] left-0 w-full justify-start gap-2 bg-red-500 hover:bg-red-600"
+            className="absolute bottom-[106px] left-0 w-full justify-start gap-2 bg-red-500 hover:bg-red-600"
           >
             <LogOutIcon size={16} />
             Fazer Logout
