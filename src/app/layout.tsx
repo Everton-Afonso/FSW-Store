@@ -25,7 +25,7 @@ export default function RootLayout({
         <section className="flex h-full flex-col">
           <AuthProvider>
             <Header />
-            <div className="flex-1">{children}</div>
+            <div className="mt-[6.375rem] flex-1">{children}</div>
             <Footer />
           </AuthProvider>
         </section>
