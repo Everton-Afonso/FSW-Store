@@ -73,7 +73,7 @@ const NavBar = () => {
         </SheetClose>
 
         <SheetClose asChild>
-          <Link href="/Catalog">
+          <Link href="/catalog">
             <Button variant="outline" className="w-full justify-start gap-2">
               <ListOrderedIcon size={16} />
               Catálogo
