@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { CATEGORY_ICON } from "@/constants/category-icon";
 import { computeProductTotalPrice } from "@/helpers/product";
 import { prismaClient } from "@/lib/prisma";
+import ProductImages from "./components/product-images";
 
 interface ProductDetailsPageProps {
   params: {
@@ -22,8 +23,8 @@ const ProductDetailsPage = async ({
   if (!product) return null;
 
   return (
-    <section className="flex flex-col gap-8 p-5">
-      <h1>{product.name}</h1>
+    <section>
+      <ProductImages imageUrls={product.imageUrls} name={product.name} />
     </section>
   );
 };
