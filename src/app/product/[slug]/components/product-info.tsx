@@ -1,11 +1,14 @@
 "use client";
 
+import { useContext, useState } from "react";
+
+import { ArrowLeftIcon, ArrowRightIcon, TruckIcon } from "lucide-react";
+
+import { CartContext } from "@/providers/cart";
 import DiscountBadge from "@/components/DiscountBadge";
 import { Button } from "@/components/ui/button";
 import { FormatCurrency } from "@/helpers/formatCurrency";
 import { ProductWithTotalPrice } from "@/helpers/product";
-import { ArrowLeftIcon, ArrowRightIcon, TruckIcon } from "lucide-react";
-import { useState } from "react";
 
 interface ProductInfoProps {
   product: ProductWithTotalPrice;
@@ -13,6 +16,7 @@ interface ProductInfoProps {
 
 const ProductInfo = ({ product }: ProductInfoProps) => {
   const [quantity, setQuantity] = useState<number>(1);
+  const { addProductToCart } = useContext(CartContext);
 
   const handleDecreaseQuantityClick = () => {
     setQuantity((prev) => (prev === 1 ? prev : prev - 1));
@@ -20,6 +24,10 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
 
   const handleIncreaseQuantityClick = () => {
     setQuantity((prev) => prev + 1);
+  };
+
+  const hamdleAddProductToCart = () => {
+    addProductToCart({ ...product, quantity });
   };
 
   return (
@@ -67,7 +75,10 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
         <p className="text-justify text-sm opacity-60">{product.description}</p>
       </div>
 
-      <Button className="mt-8 font-bold uppercase">
+      <Button
+        className="mt-8 font-bold uppercase"
+        onClick={hamdleAddProductToCart}
+      >
         Adicionar ao carrinho
       </Button>
 

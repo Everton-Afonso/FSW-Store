@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { MenuIcon, ShoppingCartIcon } from "lucide-react";
 
 import { Button } from "../ui/button";
@@ -7,7 +9,7 @@ import { Card } from "../ui/card";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 
 import NavBar from "./components/NavBar";
-import Link from "next/link";
+import Cart from "../Cart";
 
 const Header = () => {
   return (
@@ -30,9 +32,17 @@ const Header = () => {
         </h1>
       </Link>
 
-      <Button size="icon" variant="outline">
-        <ShoppingCartIcon />
-      </Button>
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button size="icon" variant="outline">
+            <ShoppingCartIcon />
+          </Button>
+        </SheetTrigger>
+
+        <SheetContent>
+          <Cart />
+        </SheetContent>
+      </Sheet>
     </Card>
   );
 };
